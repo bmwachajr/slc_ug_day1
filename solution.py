@@ -30,7 +30,6 @@ def function(arg):
   elif isinstance(arg, int):
     if arg > 1:
       prime_list = [2]
-      i = 0
       for i in range(arg):
         j = 2
         while j < i:
@@ -40,11 +39,10 @@ def function(arg):
             prime_list.append(i)
           j += 1
         i += 1
-      print (prime_list)
+    else:
+      prime_list = []
+      return prime_list
   else:
     raise TypeError('Argument must be interger')
   
   return prime_list
- 
-n = 1
-function(n)
