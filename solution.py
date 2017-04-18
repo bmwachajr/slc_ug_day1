@@ -31,7 +31,6 @@ def function(arg):
           if(i == j+1):
             prime_list.append(i)
           j += 1
-        i += 1
     else:
       prime_list = []
       return prime_list
