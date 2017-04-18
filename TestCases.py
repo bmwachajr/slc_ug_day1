@@ -1,5 +1,6 @@
 import unittest
 from unittest import TestCase
+from solution import function
 
 class functionTestCases(unittest.TestCase):    
   def test_non_integer_argument(self):
@@ -37,3 +38,5 @@ class functionTestCases(unittest.TestCase):
         'Only positive integers are allowed as input'
       )
       
+if __name__ == "__main__":
+  unittest.main()
