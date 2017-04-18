@@ -1,7 +1,7 @@
 import unittest
 from unittest import TestCase
 
-class functionTestCases(TestCase):
+class functionTestCases(unittest.TestCase):    
   def test_non_integer_argument(self):
     with self.assertRaises(TypeError) as context:
       arg = "arg"
@@ -11,8 +11,8 @@ class functionTestCases(TestCase):
         context.exception.message,
         'Only integers are allowed as input'
       )
-  
-  def test_returns_correct_list(self):
+
+  def test_ouput1(self):
     arg = 10
     result = function(arg)
     self.assertEqual(result, [2,3,5,7], msg='Expected {}, got {}'.format([2,3,5,7], result))
