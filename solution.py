@@ -8,6 +8,8 @@ At least 5 commits on your public Github repo
 """
 
 """
+The sieve of Eratosthenes >>
+
 Input: an integer n > 1.
  
  Let A be an array of Boolean values, indexed by integers 2 to n,
@@ -21,43 +23,15 @@ Input: an integer n > 1.
  Output: all i such that A[i] is true.
  
 """
-import unittest
-from unittest import TestCase
-
-class functionTestCases(TestCase):
-  def test_returns_correct_list(self):
-    arg = 10
-    result = function(arg)
-    self.assertEqual(result, [2,3,5,7], msg='Expected {}, got {}'.format([2,3,5,7], result))
-    
-  def test_non_integer_argument(self):
-    with self.assertRaises(ValueError) as context:
-      arg = -10
-      result = function(arg)
-      self.assertEqual(
-        'Argument must be positive interger',
-        context.exception.message,
-        'Only positive integers are allowed as input'
-      )
-  
-  def test_non_integer_argument(self):
-    with self.assertRaises(TypeError) as context:
-      arg = 'arg'
-      result = function(arg)
-      self.assertEqual(
-        'Argument must be interger',
-        context.exception.message,
-        'Only integers are allowed as input'
-      )
 
 def function(arg):
-  if arg < 0:
+  if arg < 1:
     raise ValueError('Argument must be positive interger')
   elif isinstance(arg, int):
-    prime_list = [2]
     if arg > 1:
-      i = 2
-      while i < arg:
+      prime_list = [2]
+      i = 0
+      for i in range(arg):
         j = 2
         while j < i:
           if (i % j == 0): 
@@ -71,6 +45,6 @@ def function(arg):
     raise TypeError('Argument must be interger')
   
   return prime_list
-  
-if __name__ == '__main__':
-  unittest.main()
+ 
+n = 1
+function(n)
