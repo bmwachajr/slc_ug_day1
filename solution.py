@@ -1,13 +1,4 @@
 """
-At least 5 test cases defined in your public Github repo for the function you are to code
-
-A working function to generate prime numbers from 0 to n with asymptotic analysis in your public Github repo
-
-At least 5 commits on your public Github repo
-
-"""
-
-"""
 The sieve of Eratosthenes >>
 
 Input: an integer n > 1.
@@ -25,9 +16,11 @@ Input: an integer n > 1.
 """
 
 def function(arg):
-  if arg < 1:
+  if type(arg) != int:
+    raise TypeError('Argument must be interger')
+  elif arg < 0:
     raise ValueError('Argument must be positive interger')
-  elif isinstance(arg, int):
+  else:
     if arg > 1:
       prime_list = [2]
       for i in range(arg):
@@ -42,7 +35,4 @@ def function(arg):
     else:
       prime_list = []
       return prime_list
-  else:
-    raise TypeError('Argument must be interger')
-  
   return prime_list
